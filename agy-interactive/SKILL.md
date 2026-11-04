@@ -1,20 +1,20 @@
 ---
 name: agy-interactive
-description: "Interactive step-by-step narration for Google Antigravity (agy) — gives Antigravity the conversational, real-time progress feel of Claude Code by outputting ultra-short 1-line updates before tool calls, compact upfront plans, brief mid-stream findings, decision check-ins, and concise completion summaries."
+description: "Interactive step-by-step narration for Google Antigravity (agy) and dsh — gives the agent the conversational, real-time progress feel of Claude Code by outputting ultra-short 1-line updates before tool calls, compact upfront plans, brief mid-stream findings, decision check-ins, and concise completion summaries."
 metadata:
-  version: "1.0.0"
-  harnesses: "Google Antigravity (agy)"
+  version: "1.1.0"
+  harnesses: "Google Antigravity (agy), dsh"
 ---
 
-# Antigravity Interactive Narration (`agy-interactive`)
+# Interactive Step-by-Step Narration (`agy-interactive`)
 
-By default, Google Antigravity (`agy`) chains tool calls silently in a single turn and only speaks at the very end. This skill and its always-loaded rule in `~/.gemini/config/rules/AGENTS.md` give `agy` the interactive, step-by-step feel of **Claude Code** without verbose walls of text.
+By default, agents like Google Antigravity (`agy`) and `dsh` often chain tool calls silently in a single turn and only speak at the very end. This skill and its always-loaded rule give `agy` and `dsh` the interactive, step-by-step feel of **Claude Code** without verbose walls of text.
 
 ---
 
 ## Core Behavior Rules
 
-Follow these rules on every turn in Antigravity (`agy`):
+Follow these rules on every turn in Antigravity (`agy`) and `dsh`:
 
 1. **Keep updates ultra-short**: Every step narration, finding, and summary must be brief and scannable (1 short sentence per step; no long paragraphs).
 2. **Narrate before acting**: Never chain silent tool calls. Before invoking tools (reading files, running commands, editing code), output a single short line stating what you are doing and why.
