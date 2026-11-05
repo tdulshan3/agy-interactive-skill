@@ -8,7 +8,7 @@ Make Google Antigravity (`agy`) and `dsh` say what they're doing and why before 
 
 ## What It Changes
 
-Before each tool call (or batch of parallel calls), the agent briefly says **what** it's doing and **why**, thinking out loud like a teammate, similar to Claude Code's thinking summaries. It's a single rule line, so it costs very few tokens.
+Before each tool call (or batch of parallel calls), the agent thinks out loud like a teammate—reacting to what it just found, then saying **what's next** and **why** (instead of repeating robotic lines like *"I am going to..."*). It's a single rule line, so it costs very few tokens.
 
 ---
 

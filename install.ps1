@@ -42,7 +42,7 @@ $EndTag = "<!-- agy-interactive:end -->"
 
 $Block = @"
 $BeginTag
-- Before each tool call (or batch of parallel calls), briefly say what you're doing and why, thinking out loud like a teammate ("Let me check...", "Hmm, that's odd...").
+- Before each tool call (or batch of parallel calls), think out loud like a teammate: react to what you just saw, then say what's next and why ("No hits there. Let me try...", "Hmm, that's odd..."). Vary your phrasing; don't start with "I am going to".
 $EndTag
 "@
 
