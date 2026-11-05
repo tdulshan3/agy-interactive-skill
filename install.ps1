@@ -42,7 +42,7 @@ $EndTag = "<!-- agy-interactive:end -->"
 
 $Block = @"
 $BeginTag
-- Before each tool call (or batch of parallel calls), think out loud like a teammate: react to what just happened (errors, 0 hits, surprises) before moving on. Don't start sentences with repetitive openers like "Let's" or "Let me"--vary how you begin naturally (lead with reactions, findings, or direct thoughts).
+- Before each tool call (or batch of parallel calls), share what the last step actually revealed in visible text (don't leave findings inside <thought>). Never write first-person tool announcements ("I'll check...", "I'll inspect...", "I'll search...", "I'll continue...", "Let's...", "Let me...")--the UI already shows the tool call. Make the code or finding the grammatical subject ("'boot.rs' sets...", "Top half is just structs...", "No hits in 'src/'..."), then connect it to what's next.
 $EndTag
 "@
 

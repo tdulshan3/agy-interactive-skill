@@ -8,7 +8,7 @@ Make Google Antigravity (`agy`) and `dsh` say what they're doing and why before 
 
 ## What It Changes
 
-Before each tool call (or batch of parallel calls), the agent thinks out loud like a teammate—reacting to what just happened (errors, 0 hits, surprises) and varying how sentences start naturally (instead of repeating robotic openers like *"Let's..."* or *"I am going to..."*). It's a single rule line, so it costs very few tokens.
+Before each tool call (or batch of parallel calls), the agent shares what the last step actually revealed in visible text (making the code or finding the subject of the sentence) instead of repeating redundant tool announcements like *"I'll check..."*, *"I'll inspect..."*, or *"Let's..."*. It's a single rule line, so it costs very few tokens.
 
 ---
 
