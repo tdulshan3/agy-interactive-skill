@@ -93,7 +93,7 @@ text = rules_path.read_text(encoding="utf-8") if rules_path.exists() else ""
 begin = "<!-- agy-interactive:begin -->"
 end = "<!-- agy-interactive:end -->"
 block = f"""{begin}
-- Before each tool call (or batch of parallel calls), briefly say what you're doing and why, thinking out loud like a teammate.
+- Before each tool call (or batch of parallel calls), briefly say what you're doing and why, thinking out loud like a teammate ("Let me check...", "Hmm, that's odd...").
 {end}"""
 
 managed_re = re.compile(re.escape(begin) + r".*?" + re.escape(end), re.S)
