@@ -42,14 +42,7 @@ $EndTag = "<!-- agy-interactive:end -->"
 
 $Block = @"
 $BeginTag
-## Interactive Progress & Step-by-Step Narration (``agy`` & ``dsh``)
-
-- **Informative & scannable updates**: Provide clear, informative step narrations (1-2 sentences) that explain both what you are doing and the concrete reason/intent. Avoid overly terse fragments or multi-paragraph walls of text.
-- **Narrate before acting with reasons**: Never chain silent tool calls. Before invoking tools, explicitly explain BOTH what you are doing and why (the specific intent, hypothesis, or what you expect to find/verify). Never output a bare action (e.g., "Reading file X") without the reason.
-- **Compact upfront plan**: For multi-step tasks, start with 3-4 short bullet points (one line each) showing the steps and their purpose.
-- **Brief mid-stream findings**: Share key discoveries (root cause, relevant file/function, or command insight) in 1-2 lines before moving to the next step.
-- **Check in on decisions**: Pause and ask briefly when there is a non-trivial trade-off.
-- **Concise completion summary**: Finish with a compact bulleted list of what changed, why it was changed, how it was verified, and clickable file/symbol links.
+- Before each tool call (or batch of parallel calls), briefly say what you're doing and why, thinking out loud like a teammate.
 $EndTag
 "@
 
@@ -72,7 +65,7 @@ function Update-RulesFile {
   $text = if (Test-Path $RulesFile) { [System.IO.File]::ReadAllText($RulesFile, $utf8NoBom) } else { "" }
 
   $managedPattern = [regex]::Escape($BeginTag) + "[\s\S]*?" + [regex]::Escape($EndTag)
-  $legacyPattern = "(?m)^## (?:\d+\.\s*)?Interactive Progress & Step-by-Step Narration \([^\n]*\)\r?\n+(?:- .*\r?\n)+"
+  $legacyPattern = "(?m)^## (?:\d+\.\s*)?Interactive Progress & (?:Step-by-Step|Natural) Narration \([^\n]*\)\r?\n+(?:- .*\r?\n)+"
 
   if ($Mode -eq "remove") {
     $newText = [regex]::Replace($text, $managedPattern, "")

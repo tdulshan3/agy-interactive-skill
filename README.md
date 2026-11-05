@@ -1,19 +1,14 @@
 # Interactive Narration Skill (`agy-interactive`)
 
-Give Google Antigravity (`agy`) and `dsh` the interactive, step-by-step feel of **Claude Code**.
+Make Google Antigravity (`agy`) and `dsh` say what they're doing and why before each tool call, instead of chaining tool calls silently.
 
-By default, `agy` and `dsh` often chain tool calls silently in a single turn and only write a message after everything is finished. `agy-interactive` installs an always-on rule block into their global `AGENTS.md` files (and links the skill into their skill directories) so they narrate what they are doing and **why they are doing it** in real time with **clear, informative, and scannable updates**.
+`agy-interactive` adds a one-line always-on rule to their global `AGENTS.md` files and links the skill into their skill directories.
 
 ---
 
 ## What It Changes
 
-- **Informative & scannable updates**: Every step narration, finding, and summary stays clear, scannable, and informative (1–2 sentences per step; no walls of text, no bare fragments).
-- **Narrate before acting with explicit reasons**: Never chains silent tool calls. Before reading files, running commands, or editing code, the agent outputs a clear statement explaining BOTH **what it is doing** and the **concrete reason why** (intent, hypothesis, or expected verification). Never outputs bare action-only statements like *"Reading file X"* without context.
-- **Compact upfront plan**: Starts multi-step tasks with 3–4 concise one-line bullets showing the roadmap and intent immediately.
-- **Detailed mid-stream findings**: Shares key discoveries (root cause, relevant file/function, or command insight) and explains why they matter before moving to the next step.
-- **Check in on decisions**: Pauses and asks briefly when there is a non-trivial trade-off instead of guessing silently.
-- **Concise completion summary**: Finishes with a compact bulleted list of what changed, why it changed, how it was verified, and clickable `file://` links.
+Before each tool call (or batch of parallel calls), the agent briefly says **what** it's doing and **why**, thinking out loud like a teammate, similar to Claude Code's thinking summaries. It's a single rule line, so it costs very few tokens.
 
 ---
 
