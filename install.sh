@@ -93,7 +93,7 @@ text = rules_path.read_text(encoding="utf-8") if rules_path.exists() else ""
 begin = "<!-- agy-interactive:begin -->"
 end = "<!-- agy-interactive:end -->"
 block = f"""{begin}
-- Before each tool call (or batch of parallel calls), think out loud like a teammate: react to what you just saw, then say what's next and why ("No hits there. Let me try...", "Hmm, that's odd..."). Vary your phrasing; don't start with "I am going to".
+- Before each tool call (or batch of parallel calls), think out loud like a teammate: react to what just happened (errors, 0 hits, surprises) before moving on. Don't start sentences with repetitive openers like "Let's" or "Let me"--vary how you begin naturally (lead with reactions, findings, or direct thoughts).
 {end}"""
 
 managed_re = re.compile(re.escape(begin) + r".*?" + re.escape(end), re.S)
